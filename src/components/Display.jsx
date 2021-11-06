@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Display = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const Display = (props) => {
+  return (
+    <div className="display bg-dark text-white p-4">
+      <p>{}</p>
+    </div>
+  );
+};
 
-export default Display
+export default Display;

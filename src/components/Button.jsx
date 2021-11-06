@@ -1,31 +1,43 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./Button.css";
 
-export default class Button extends React.Component {
-  static propTypes = {
-    name: PropTypes.string,
-    orange: PropTypes.bool,
-    wide: PropTypes.bool,
-    clickHandler: PropTypes.func,
-  };
+const Button = (props) => {
+  const buttonTypes = [
+    "BORRAR",
+    "C",
+    "CE",
+    "%",
+    9,
+    8,
+    7,
+    "/",
+    6,
+    5,
+    4,
+    "x",
+    3,
+    2,
+    1,
+    "-",
+    0,
+    ",",
+    "=",
+    "+",
+  ];
 
-  handleClick = () => {
-    this.props.clickHandler(this.props.name);
-  };
+  // const handleClick = (props) => {
+  //   return console.log(props.type);
+  // };
 
-  render() {
-    const className = [
-      "component-button",
-      this.props.orange ? "orange" : "",
-      this.props.wide ? "wide" : "",
-    ];
-
-    return (
-      <div className={className.join(" ").trim()}>
-        <button onClick={this.handleClick}>{this.props.name}</button>
+  return (
+    <div className="btn btn-info m-2">
+      <div className="bg-primary row row-cols-5 p-3">
+        {buttonTypes.map((type, index) => (
+          <div key={index} type={type} />
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
+export default Button;
